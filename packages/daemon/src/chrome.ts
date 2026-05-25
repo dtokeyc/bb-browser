@@ -347,7 +347,7 @@ export function createChromeManager(): ChromeManager {
         process.env.BB_BROWSER_HOME || path.join(os.homedir(), ".bb-browser"),
         "chrome-data",
       );
-      const windowSize = options?.windowSize ?? "1920,1080";
+      const windowSize = options?.windowSize ?? process.env.CHROME_WINDOW_SIZE ?? "1920,1080";
 
       mkdirSync(userDataDir, { recursive: true });
 
